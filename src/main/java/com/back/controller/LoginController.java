@@ -2,12 +2,10 @@ package com.back.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.back.response.Response;
+import com.back.response.ResultUtil;
 import com.back.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author zhouwenquan
@@ -24,6 +22,11 @@ public class LoginController {
     @PostMapping(value = "/login")
     public Response login(@RequestBody JSONObject jsonObject) {
         return loginService.login(jsonObject);
+    }
+
+    @GetMapping("/test")
+    public Response test(){
+        return ResultUtil.success("为什么在这里呢");
     }
 
 }

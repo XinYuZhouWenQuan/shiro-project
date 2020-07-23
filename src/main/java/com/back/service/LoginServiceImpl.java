@@ -42,6 +42,6 @@ public class LoginServiceImpl implements LoginService {
                 return ResultUtil.fail("未知错误，请联系管理员！");
             }
         }
-        return ResultUtil.success();
+        return ResultUtil.success("登录成功");
     }
 }
